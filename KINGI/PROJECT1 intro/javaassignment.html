@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let gitscore= parseInt(prompt("Enter your score for Git"));
+        let programmingscore= parseInt(prompt("Enter your score for fundermentals of programming"));
+        let htmlscore= parseInt(prompt("Enter your score for html"));
+        let avg=((gitscore+programmingscore+htmlscore))/3;
+        if (avg>=70 && avg<=100){
+           alert=("A");
+        }else if(avg>=60 && avg<=69){
+            alert=("B");
+        }else if(avg>=50 && avg<=59){
+            alert=("C");
+        }else if(avg>=40 && avg<=49){
+            alert=("D");
+        }else if(avg>=0 && avg<=39){
+            alert=("E");
+        }else{
+            alert=("F");
+        }
+    </script>
+</body>
+</html>

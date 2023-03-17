@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let purchaseAmount= parseInt(prompt("enter amount"));
+        if (purchaseAmount>=10000){
+         let discountPercent=15;
+         let discount= purchaseAmount*(discountPercent/100);
+         let finalAmount= purchaseAmount-discount;
+         alert("your final amount is"+finalAmount);
+        }else if(purchaseAmount>=5000 && purchaseAmount<=9999){
+            let discountPercent= 10;
+            let discount= purchaseAmount*(discountPercent/100);
+            let finalAmount=purchaseAmount-discount;
+            alert("your final amount is"+finalAmount);
+        }else if(purchaseAmount>=3000 && purchaseAmount<=4999){
+            let discountPercent= 5;
+            let discount= purchaseAmount*(discountPercent/100);
+            let finalAmount=purchaseAmount-discount;
+            alert("your final amount is"+finalAmount);
+        }else if(purchaseAmount<=2999){
+            let discountPercent= 0;
+            let discount= purchaseAmount*(discountPercent/100);
+            let finalAmount=purchaseAmount-discount;
+            alert("your final amount is"+finalAmount);
+        } else{
+            alert("invalid Purchase Amount");
+        }
+    </script>
+</body>
+</html>

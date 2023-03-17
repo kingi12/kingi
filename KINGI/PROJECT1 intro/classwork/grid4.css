@@ -1,0 +1,45 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+#example{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    max-width: 720pxx;
+    margin: 0 auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "sidebar1 contents contents"
+    "sidebar1 content1 content2"
+    "sidebar2 main main"
+    "sidebar2 content3 content4";
+}
+#example > *{
+    background-color: #f2f2f2;
+    padding: 30px;
+}
+contents{
+    grid-area: contents;
+}
+main{
+    grid-area: main;
+}
+sidebar1{
+    grid-area: sidebar1;
+}
+sidebar2{
+    grid-area: sidebar2;
+}
+content1{
+    grid-area: content1;
+}
+content2{
+    grid-area: content2;
+}
+content3{
+    grid-area: content3;
+}
+content4{
+    grid-area: content4;
+}
