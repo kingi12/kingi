@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iPhone Analogue Clock</title>
+    <style>
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            position: relative;
+            transform: rotate(90deg);
+            margin: 0 auto;
+        }
+        .hour-hand,
+        .minute-hand,
+        .second-hand {
+            position: absolute;
+            top: calc(50% - 2px);
+            left: calc(50% - 1px);
+            transform-origin: bottom center;
+            transform: rotate(0deg);
+            transition: transform 0.2s ease-in-out;
+        }
+        .hour-hand {
+            width: 50px;
+            height: 4px;
+            background-color: #000;
+        }
+        .minute-hand {
+            width: 70px;
+            height: 2px;
+            background-color: #000;
+        }
+        .second-hand {
+            width: 80px;
+            height: 1px;
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour-hand" id="hourHand"></div>
+        <div class="minute-hand" id="minuteHand"></div>
+        <div class="second-hand" id="secondHand"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+            
+            var hourHand = document.getElementById('hourHand');
+            var minuteHand = document.getElementById('minuteHand');
+            var secondHand = document.getElementById('secondHand');
+            
+            // Calculate rotation degrees for each hand
+            var hourRotation = (hour % 12) * 30 + minute * 0.5 - 90;
+            var minuteRotation = minute * 6 + second * 0.1 - 90;
+            var secondRotation = second * 6 - 90;
+            
+            // Apply rotation to the hands
+            hourHand.style.transform = 'rotate(' + hourRotation + 'deg)';
+            minuteHand.style.transform = 'rotate(' + minuteRotation + 'deg)';
+            secondHand.style.transform = 'rotate(' + secondRotation + 'deg)';
+        }
+        
+        // Update clock every second
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
